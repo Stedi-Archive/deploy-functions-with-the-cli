@@ -1,0 +1,17 @@
+{
+    "name": "deploy-functions-with-the-cli",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "node test.js",
+        "build": "npx esbuild index.js --bundle --minify --platform=node --outfile=build/index.js && cd build && zip package index.js && cd .."
+    },
+    "author": "Stedi",
+    "dependencies": {
+        "axios": "0.26.1"
+    },
+    "devDependencies": {
+        "esbuild": "^0.14.36"
+    }
+}
