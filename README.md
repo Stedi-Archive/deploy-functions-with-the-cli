@@ -29,15 +29,15 @@ In addition, you need to have the following tools available on your machine:
 
 ```console
 git clone https://github.com/Stedi-Demos/deploy-functions-with-the-cli.git
-cd deploy-functions-with-the-cli/web-request
+cd deploy-functions-with-the-cli
 ```
 
 The directory has the following contents.
 
 File           | Description
 ---------------|------------
-`index.js`    | The JavaScript code we will upload to Stedi Functions.
-`test.js`     | A script that allows you to test the function locally.
+`index.js`     | The JavaScript code we will upload to Stedi Functions.
+`test.js`      | A script that allows you to test the function locally.
 `event.json`   | Data we can use to the test the function.
 `package.json` | Metadata about this project as an npm package.
 `readme.md`    | The instructions you’re currently reading.
@@ -47,7 +47,7 @@ File           | Description
 The code in `index.js` calls the Wikipedia API and retrieves an article. In order to do that, it needs the Axios library. Axios is already listed in `package.json`, so you can install it with:
 
 ```console
-npm install
+npm ci
 ```
 
 The input to the function contains the topic you wish to retrieve from Wikipedia. `event.json` contains an example. You can test the function locally by running `test.js`, which in turn calls `handler()` in `index.js`.
@@ -76,13 +76,11 @@ npx stedi help
 
 ## Step 4: Create and configure an API key
 
-You need to specify your [API key](https://www.stedi.com/app/settings/api-keys) when calling Stedi Functions using the CLI. The most convenient way to do this, is to create a file called `.stedirc` in you home directory.
+You need to specify your [API key](https://www.stedi.com/app/settings/api-keys) when calling Stedi Functions using the CLI. You do this by setting the environment variable `STEDI_API_KEY`.
 
 ```
-api-key = <your API key here>
+export STEDI_API_KEY=<your API key here>
 ```
-
-If you want, you can create `.stedirc` in your project directory, but make sure you add it to `.gitignore` if you do. You should never commit your API key to source control. Anyone who has your API key can create, update, and delete resource on your behalf.
 
 You can test whether you successfully set your API key by running the following command:
 
@@ -137,4 +135,3 @@ The contents of `events.json` is send to the function as its `event` parameter. 
 - Want to know more about Stedi Functions? [Check out the Stedi Functions user guide.](https://www.stedi.com/docs/functions)
 - Want to know more about the Stedi CLI? [Check out the Stedi CLI documentation.](https://www.npmjs.com/package/@stedi/cli)
 - Want to ask a question? [Contact us.](https://www.stedi.com/contact)
-
