@@ -22,9 +22,8 @@ Here’s what you need.
 
 In addition, you need to have the following tools available on your machine:
 
-- git (https://git-scm.com/downloads)
-- npm (https://www.npmjs.com/get-npm)
-- Node.js (https://nodejs.dev/en/learn/how-to-install-nodejs)
+- [git](https://git-scm.com/downloads)
+- [Node.js](https://nodejs.org/)
 
 ## Step 1: Clone this repository and navigate to the project directory
 
