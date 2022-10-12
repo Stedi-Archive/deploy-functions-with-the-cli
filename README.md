@@ -105,7 +105,7 @@ Assuming you haven’t created any functions yet, the response should be:
 npx esbuild index.js --bundle --minify --platform=node --outfile=build/index.js
 ```
 
-This takes the code from `index.js` and all its dependencies and writes them to a single file. This also works if your project has multiple source files;; they will be bundled automatically. It will only include files `index.js` depends on, so `test.js` will not be part of it.
+This takes the code from `index.js` and all its dependencies and writes them to a single file. This also works if your project has multiple source files; they will be bundled automatically. It will only include files `index.js` depends on, so `test.js` will not be part of it.
 
 ```console
 cd build
