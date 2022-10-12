@@ -8,6 +8,7 @@
         "build": "npx esbuild index.js --bundle --minify --platform=node --outfile=build/index.js && cd build && zip package index.js && cd .."
     },
     "author": "Stedi",
+    "license": "Apache-2.0",
     "dependencies": {
         "axios": "0.26.1"
     },
