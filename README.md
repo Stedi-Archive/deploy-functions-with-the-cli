@@ -128,7 +128,7 @@ npx stedi functions update-function --function-name wikipedia --package build/pa
 npx stedi functions invoke-function --function-name wikipedia --payload file://event.json
 ```
 
-The contents of `events.json` is send to the function as its `event` parameter. The result of this command should be the same as when you ran the function locally: a Wikipedia article on EDI.
+The contents of `events.json` is sent to the function as its `event` parameter. The result of this command should be the same as when you ran the function locally: a Wikipedia article on EDI.
 
 ## That’s all
 
