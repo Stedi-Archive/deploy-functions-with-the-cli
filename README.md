@@ -47,7 +47,7 @@ File           | Description
 The code in `index.js` calls the Wikipedia API and retrieves an article. In order to do that, it needs the Axios library. Axios is already listed in `package.json`, so you can install it with:
 
 ```console
-npm ci
+npm install
 ```
 
 The input to the function contains the topic you wish to retrieve from Wikipedia. `event.json` contains an example. You can test the function locally by running `test.js`, which in turn calls `handler()` in `index.js`.
