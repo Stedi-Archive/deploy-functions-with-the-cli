@@ -96,15 +96,23 @@ Assuming you haven’t created any functions yet, the response should be:
 }
 ```
 
-## Step 5: Create a bucket to store package
+## Step 5: Create a bucket for your code
 
-This creates a Stedi Bucket that will keep your code.
+Before you can deploy your code to Stedi Functions, you will need to upload it to [Stedi Buckets](https://www.stedi.com/docs/buckets). You can use any bucket in your account. We recommend you create a separate bucket for deployments.
+
+You can create a bucket using the CLI. Keep in mind that the name needs to be globally unique.
 
 ```console
-uuid=$(uuidgen)
-export BUCKET_NAME="cli-example-${uuid:l}"
-npx stedi buckets create-bucket --bucket-name ${BUCKET_NAME}
+npx stedi buckets create-bucket --bucket-name YOUR-BUCKET-NAME-HERE
 ```
+
+If you have a hard time coming up with a name that no one else has thought of before, you can add a UUID.
+
+```console
+npx stedi buckets create-bucket --bucket-name YOUR-BUCKET-NAME-HERE-$(uuidgen)
+```
+
+Make a note of the bucket name. You’ll need it later.
 
 ## Step 6: Build, package, and deploy
 
@@ -120,22 +128,24 @@ zip package index.js
 cd ..
 ```
 
-The ZIP file you upload to the previously created Stedi Bucket must have `index.js` at the root. That’s why you must run `zip` from within the `build` directory.
+The ZIP file must have `index.js` at the root. That’s why you must run `zip` from within the `build` directory.
+
+Next, put the package in the bucket you previously created.
 
 ```console
-npx stedi buckets put-object --bucket-name ${BUCKET_NAME} --key package.zip --body file://./build/package.zip
+npx stedi buckets put-object --key package.zip --body file://build/package.zip --bucket-name YOUR-BUCKET-NAME-HERE
 ```
 
-Now we create a function with the name name `wikipedia`.
+Now we create a function with the name `wikipedia`.
 
 ```console
-npx stedi functions create-function --function-name wikipedia --package "s3://${BUCKET_NAME}/package.zip"
+npx stedi functions create-function --function-name wikipedia --package "s3://YOUR-BUCKET-NAME-HERE/package.zip"
 ```
 
-Once the function exists, you can update the code as follows after you have uploaded the package to your bucket:
+If you ever want to update the code, just upload the new code to your bucket and run the following command.
 
 ```console
-npx stedi functions update-function --function-name wikipedia --package "s3://${BUCKET_NAME}/package.zip"
+npx stedi functions update-function --function-name wikipedia --package "s3://YOUR-BUCKET-NAME-HERE/package.zip"
 ```
 
 ## Step 7: Invoke the Function
