@@ -106,7 +106,7 @@ You can create a bucket using the CLI. Keep in mind that the name needs to be gl
 npx stedi buckets create-bucket --bucket-name <YOUR_BUCKET_NAME_HERE>
 ```
 
-If you have a hard time coming up with a name that no one else has thought of before, you can add a lowercased UUID.
+If you have a hard time coming up with a name that no one else has thought of before, you can add a lowercase UUID.
 
 ```console
 npx stedi buckets create-bucket --bucket-name <YOUR-BUCKET-NAME-HERE>-${$(uuidgen):l}
