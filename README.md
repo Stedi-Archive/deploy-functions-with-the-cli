@@ -109,7 +109,7 @@ npx stedi buckets create-bucket --bucket-name <YOUR_BUCKET_NAME_HERE>
 If you have a hard time coming up with a name that no one else has thought of before, you can add a lowercased UUID.
 
 ```console
-npx stedi buckets create-bucket --bucket-name <YOUR-BUCKET-NAME-HERE>-$(lowercase_uuid)
+npx stedi buckets create-bucket --bucket-name <YOUR-BUCKET-NAME-HERE>-${$(uuidgen):l}
 ```
 
 Make a note of the bucket name. You’ll need it later.
