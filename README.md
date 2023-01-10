@@ -103,7 +103,7 @@ Before you can deploy your code to Stedi Functions, you will need to upload it t
 You can create a bucket using the CLI. Keep in mind that the name needs to be globally unique.
 
 ```console
-npx stedi buckets create-bucket --bucket-name <YOUR-BUCKET-NAME-HERE>
+npx stedi buckets create-bucket --bucket-name <YOUR_BUCKET_NAME_HERE>
 ```
 
 If you have a hard time coming up with a name that no one else has thought of before, you can add a lowercased UUID.
