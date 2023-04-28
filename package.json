@@ -10,6 +10,7 @@
     "author": "Stedi",
     "license": "Apache-2.0",
     "dependencies": {
+        "@stedi/cli": "file:../stedi-cli/stedi-cli-0.0.0.tgz",
         "axios": "0.26.1"
     },
     "devDependencies": {
