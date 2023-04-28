@@ -65,7 +65,7 @@ Electronic data interchange (EDI) is the concept of businesses electronically co
 ## Step 3: Install the Stedi CLI
 
 ```console
-npm install @stedi/cli --save-dev
+npm install @stedi/cli@2 --save-dev
 ```
 
 If all goes well, the following command should output usage information and the Stedi CLI version.
